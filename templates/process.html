@@ -12,42 +12,91 @@
     <h1>Podsumowanie zgłoszenia</h1>
     <table>
         <tr class="customRow">
-            <span class="fieldName">Nazwisko</span>
-            <span class="field">{{ form.surname }}</span>
+            <td>
+                <span class="fieldName">Nazwisko</span>
+                <span class="field">{{ form.surname }}</span>
+            </td>
         </tr>
         <tr class="customRow">
-            <span class="fieldName">Imię</span>
-            <span class="field">{{ form.first_name }}</span>
+            <td>
+                <span class="fieldName">Imię</span>
+                <span class="field">{{ form.first_name }}</span>
+            </td>
         </tr>
         <tr class="customRow">
-            <span class="fieldName">Email</span>
-            <span class="field">{{ form.email }}</span>
+            <td>
+                <span class="fieldName">Email</span>
+                <span class="field">{{ form.email }}</span>
+            </td>
         </tr>
         <tr class="customRow">
-            <span class="fieldName">Telefon</span>
-            <span class="field">{{ form.phone }}</span>
+            <td>
+                <span class="fieldName">Telefon</span>
+                <span class="field">{{ form.phone }}</span>
+            </td>
         </tr>
         <tr class="customRow">
-            <span class="fieldName">Ile razy w tygodniu</span>
-            <span class="field">{{ form.frequency }}</span>
+            <td>
+                <span class="fieldName">Ile razy w tygodniu</span>
+                <span class="field">{{ form.frequency }}</span>
+            </td>
         </tr>
         <tr class="customRow">
-            <span class="fieldName">Pasujące dni</span>
-            <span class="field">{{ weekdays }}</span>
+            <td>
+                <span class="fieldName">Pasujące dni</span>
+                <span class="field">{{ weekdays }}</span>
+            </td>
         </tr>
         <tr class="customRow">
-            <span class="fieldName">Odpowiednie godziny</span>
-            <span class="field">{{ hours }}</span>
+            <td>
+                <span class="fieldName">Odpowiednie godziny</span>
+                <span class="field">{{ hours }}</span>
+            </td>
         </tr>
         <tr class="customRow">
-            <span class="fieldName">Interesujące zajęcia</span>
-            <span class="field">{{ form.interests }}</span>
+            <td>
+                <span class="fieldName">Interesujące zajęcia</span>
+                <span class="field">{{ form.interests }}</span>
+            </td>
         </tr>
         <tr class="customRow">
-            <span class="fieldName">Zgoda na przetwarzanie</span>
-            <span class="field">{% if form.legal_bs %}Tak{% else %}Nie{% endif %}</span>
+            <td>
+                <span class="fieldName">Zgoda na przetwarzanie</span>
+                <span class="field">{% if form.legal_bs %}Tak{% else %}Nie{% endif %}</span>
+            </td>
         </tr>
     </table>
 </body>
+<style>
+    table {
+        width: 80ch;
+        border: 2px solid black;
+        border-collapse: collapse;
+    }
+
+    .customRow {
+        border-collapse: collapse;
+    }
+
+    .customRow td {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    .customRow:nth-child(odd) td {
+        background-color: lightgray;
+    }
+
+    .customRow:nth-child(even) td {
+        background-color: white;
+    }
+
+    .fieldName {
+        text-transform: uppercase;
+    }
+</style>
 
 </html>

@@ -11,16 +11,24 @@
 <body>
     <h1>Formularz zgłoszeniowy do klubu fitness</h1>
     <form action="process" method="post" id="mainForm">
-        <fieldset>
+        <fieldset class="contactSet">
             <legend>Dane kontaktowe</legend>
-            <label for="first_name_input">Imię</label>
-            <input id="first_name_input" name="first_name" type="text" required>
-            <label for="surname_input">Nazwisko</label>
-            <input id="surname_input" name="surname" type="text" required>
-            <label for="email_input">Email</label>
-            <input id="email_input" name="email" type="email" required>
-            <label for="phone_input">Telefon</label>
-            <input id="phone_input" name="phone" type="tel" required>
+            <div>
+                <label for="first_name_input">Imię</label>
+                <input id="first_name_input" name="first_name" type="text" required>
+            </div>
+            <div>
+                <label for="surname_input">Nazwisko</label>
+                <input id="surname_input" name="surname" type="text" required>
+            </div>
+            <div>
+                <label for="email_input">Email</label>
+                <input id="email_input" name="email" type="email" required>
+            </div>
+            <div>
+                <label for="phone_input">Telefon</label>
+                <input id="phone_input" name="phone" type="tel" required>
+            </div>
         </fieldset>
         <fieldset>
             <label for="frequencyInput"><b>Jak często w tygodniu chcesz przychodzić do klubu?</b></label>
@@ -33,20 +41,34 @@
             </select>
             <fieldset>
                 <legend>Pasuje mi dzień:</legend>
-                <input type="checkbox" name="mon" id="monCheck">
-                <label for="monCheck">Poniedziałek</label>
-                <input type="checkbox" name="tue" id="tueCheck">
-                <label for="tueCheck">Wtorek</label>
-                <input type="checkbox" name="wed" id="wedCheck">
-                <label for="wedCheck">Środa</label>
-                <input type="checkbox" name="thu" id="thuCheck">
-                <label for="thuCheck">Czwartek</label>
-                <input type="checkbox" name="fri" id="friCheck">
-                <label for="friCheck">Piątek</label>
-                <input type="checkbox" name="sat" id="satCheck">
-                <label for="satCheck">Sobota</label>
-                <input type="checkbox" name="sun" id="sunCheck">
-                <label for="sunCheck">Niedziela</label>
+                <div>
+                    <input type="checkbox" name="mon" id="monCheck">
+                    <label for="monCheck">Poniedziałek</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="tue" id="tueCheck">
+                    <label for="tueCheck">Wtorek</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="wed" id="wedCheck">
+                    <label for="wedCheck">Środa</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="thu" id="thuCheck">
+                    <label for="thuCheck">Czwartek</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="fri" id="friCheck">
+                    <label for="friCheck">Piątek</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="sat" id="satCheck">
+                    <label for="satCheck">Sobota</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="sun" id="sunCheck">
+                    <label for="sunCheck">Niedziela</label>
+                </div>
             </fieldset>
             <fieldset>
                 <legend>Odpowiadają mi godziny:</legend>
@@ -58,7 +80,22 @@
             </fieldset>
             <textarea name="interests" placeholder="Jakimi zajęciami jesteś zainteresowany/a?"></textarea>
         </fieldset>
+        <fieldset>
+            <legend>Wyrażam zgodę na przetwarzanie danych osobowych:</legend>
+            <input type="radio" id="legal_bs_yes" name="legal_bs" value="true">
+            <label for="legal_bs_yes">Tak</label>
+            <input type="radio" id="legal_bs_no" name="legal_bs" value="false">
+            <label for="legal_bs_no">Nie</label>
+        </fieldset>
+        <button type="submit">Podsumowanie</button>
+        <button id="clearFormButton">Wyczyść formularz</button>
     </form>
 </body>
+<style>
+    textarea {
+        width: 40ch;
+        height: 20ch;
+    }
+</style>
 
 </html>

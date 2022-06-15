@@ -22,14 +22,15 @@ pub struct GymForm {
     email: String,
     phone: String,
     frequency: i32,
-    mon: bool,
-    tue: bool,
-    wed: bool,
-    thu: bool,
-    fri: bool,
-    sat: bool,
-    sun: bool,
+    mon: Option<bool>,
+    tue: Option<bool>,
+    wed: Option<bool>,
+    thu: Option<bool>,
+    fri: Option<bool>,
+    sat: Option<bool>,
+    sun: Option<bool>,
     hours: Hours,
+    interests: String,
     legal_bs: bool,
 }
 
@@ -62,27 +63,35 @@ async fn process(
     let mut ctx = tera::Context::new();
     ctx.insert("form", &gym);
     let mut weekdays_string = String::new();
-    if gym.mon {
+    if gym.mon.is_some() {
         weekdays_string += "Poniedziałek ";
     }
-    if gym.tue {
+    if gym.tue.is_some() {
         weekdays_string += "Wtorek ";
     }
-    if gym.wed {
+    if gym.wed.is_some() {
         weekdays_string += "Środa ";
     }
-    if gym.thu {
+    if gym.thu.is_some() {
         weekdays_string += "Czwartek ";
     }
-    if gym.fri {
+    if gym.fri.is_some() {
         weekdays_string += "Piątek ";
     }
-    if gym.sat {
+    if gym.sat.is_some() {
         weekdays_string += "Sobota ";
     }
-    if gym.sun {
+    if gym.sun.is_some() {
         weekdays_string += "Niedziela ";
     }
     ctx.insert("weekdays", &weekdays_string);
+    ctx.insert(
+        "hours",
+        &match gym.hours {
+            Hours::Afternoon => "popołudniowe",
+            Hours::Evening => "wieczorne",
+            Hours::Morning => "poranne",
+        },
+    );
     Html(tera.render("process.html", &ctx).unwrap())
 }

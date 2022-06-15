@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podsumowanie zgłoszenia</title>
+</head>
+
+<body>
+    <h1>Podsumowanie zgłoszenia</h1>
+    <table>
+        <tr class="customRow">
+            <span class="fieldName">Nazwisko</span>
+            <span class="field">{{ form.surname }}</span>
+        </tr>
+        <tr class="customRow">
+            <span class="fieldName">Imię</span>
+            <span class="field">{{ form.first_name }}</span>
+        </tr>
+        <tr class="customRow">
+            <span class="fieldName">Email</span>
+            <span class="field">{{ form.email }}</span>
+        </tr>
+        <tr class="customRow">
+            <span class="fieldName">Telefon</span>
+            <span class="field">{{ form.phone }}</span>
+        </tr>
+        <tr class="customRow">
+            <span class="fieldName">Ile razy w tygodniu</span>
+            <span class="field">{{ form.frequency }}</span>
+        </tr>
+        <tr class="customRow">
+            <span class="fieldName">Pasujące dni</span>
+            <span class="field">{{ weekdays }}</span>
+        </tr>
+        <tr class="customRow">
+            <span class="fieldName">Odpowiednie godziny</span>
+            <span class="field">{{ hours }}</span>
+        </tr>
+        <tr class="customRow">
+            <span class="fieldName">Interesujące zajęcia</span>
+            <span class="field">{{ form.interests }}</span>
+        </tr>
+        <tr class="customRow">
+            <span class="fieldName">Zgoda na przetwarzanie</span>
+            <span class="field">{% if form.legal_bs %}Tak{% else %}Nie{% endif %}</span>
+        </tr>
+    </table>
+</body>
+
+</html>
